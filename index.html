@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Nayan's Portfolio</title>
     <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -20,7 +21,7 @@
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">My Work</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact Me</a></li>
             </ul>
         </nav>
@@ -37,7 +38,11 @@
             <h1>Hello, I'm <span>Nayan</span></h1>
             <p>A Computer Science Student passionate about technology and innovation.</p>
         </div>
+        <a href="./public/resume.pdf" class="download-btn" download>
+            <i class="fas fa-file-download"></i>Download Resume
+        </a>
     </section>
+    
 
     <section id="about">
         <h2>About Me</h2>
@@ -47,18 +52,10 @@
         </div>
         <div class="aboutMe-content">
             <img src="./public/aboutMe.jpg" alt="" class="image1">
-            <div class="context1">
+            <div class="context">
                 <h3>Introduction</h3>
                 <span id="about-para">I'm a Computer Science undergrad with a strong foundation in software development and programming. Passionate about learning, I thrive in both collaborative and individual settings. I aim to work on projects that make a positive impact, leveraging technology to drive meaningful solutions. Communication and teamwork are key strengths that help me adapt and grow.</span>
             </div>
-        </div>
-        <hr id="sub-partition">
-        <div class="aboutMe-content">
-            <div class="context2">
-                <h3>Path to Growth</h3>
-                <span id="about-para">Currently, I'm diving into the world of technology as a Computer Science student at Chitkara University, where every day is an opportunity to grow and innovate. My educational journey began at Amravati Vidyalaya and continued at Govt. Model Sr. Secondary School, where my curiosity and drive were sparked. Along the way, I've had the honor of earning state-level recognition in poster-making, showcasing my creativity. One of my proudest moments was being selected for the North Zone AIU Aneveshan Student Research Convention 2023, an experience that inspired me to pursue impactful projects. Beyond academics, I'm a passionate dancer, painter, and lifelong learner, always eager to explore new skills and ideas.</span>
-            </div>
-            <img src="./public/aboutMe.jpg" alt="" class="image2">
         </div>
         <div class="partition"></div>
     </section>
@@ -120,7 +117,7 @@
     
 
     <section id="projects">
-        <h2>My Work</h2>
+        <h2>Projects</h2>
         <hr class="underline">
         <div class="section-intro">
             <p>Take a look at some of the projects I've worked on. These reflect my passion for technology and innovation.</p>
@@ -129,52 +126,57 @@
             <div class="project-item">
                 <div class="project-inner">
                     <div class="project-front">
-                        <img src="./public/Ai_testpad.jpeg" alt="Project 1">
-                    </div>
-                    <div class="project-back">
-                        <a href="https://github.com/nayankohli/AI-Chat-Bot"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        <i class="fa-solid fa-clipboard-list"></i>
                         <h2>AI TESTPAD</h2>
-                        <span>an innovative online testing platform where assessments are evaluated using advanced AI algorithms.</span>
+                    </div>
+                    <div class="project-back">
+                        <span>An innovative online testing platform where assessments are evaluated using advanced AI algorithms.</span>
+                        <a href="https://github.com/nayankohli/AI-Chat-Bot"><i class="fa-brands fa-github"></i> View on Github</a>
                     </div>
                 </div>
+                <hr id="sub-partition">
             </div>
             <div class="project-item">
                 <div class="project-inner">
                     <div class="project-front">
-                        <img src="./public/trendify.jpeg" alt="Project 2">
-                    </div>
-                    <div class="project-back">
-                        <a href="https://github.com/nayankohli/Trendify"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        <i class="fa-solid fa-shirt"></i>
                         <h2>TRENDIFY</h2>
+                    </div>
+                    <div class="project-back">
                         <span>An innovative e-commerce platform tailored for fashion enthusiasts, offering a seamless shopping experience with the latest trends and styles</span>
+                        <a href="https://github.com/nayankohli/Trendify"><i class="fa-brands fa-github"></i> View on Github</a>
                     </div>
                 </div>
+                <hr id="sub-partition">
             </div>
             <div class="project-item">
                 <div class="project-inner">
                     <div class="project-front">
-                        <img src="./public/blogging.jpeg" alt="Project 3">
-                    </div>
-                    <div class="project-back">
-                        <a href="https://github.com/nayankohli/DailyBlogger"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        <i class="fa-solid fa-blog"></i>
                         <h2>DAILY BLOGGER</h2>
+                    </div>
+                    <div class="project-back">
                         <span>A personalized blog platform designed for sharing daily experiences, thoughts, and insights with a global audience.</span>
+                        <a href="https://github.com/nayankohli/DailyBlogger"><i class="fa-brands fa-github"></i> View on Github</a>
                     </div>
                 </div>
+                <hr id="sub-partition">
             </div>
             <div class="project-item">
                 <div class="project-inner">
                     <div class="project-front">
-                        <img src="./public/vibeNest.jpeg" alt="Project 4">
+                        <i class="fa-solid fa-comments"></i>
+                        <h2>VIBE NEST</h2>
                     </div>
                     <div class="project-back">
-                        <a href="https://github.com/nayankohli/VibeNest"><i class="fa-solid fa-magnifying-glass"></i></a>
-                        <h2>VIBE NEST</h2>
                         <span>A dynamic social media platform designed to foster meaningful connections and seamless sharing of experiences.</span>
+                        <a href="https://github.com/nayankohli/VibeNest"><i class="fa-brands fa-github"></i> View on Github</a>
                     </div>
                 </div>
+                <hr id="sub-partition">
             </div>
         </div>
+        <div class="partition"></div>
     </section>
     
     
@@ -206,4 +208,84 @@
         <p>Connect with me on <a href="#">LinkedIn</a></p>
     </footer>
 </body>
+<script>
+    // Select all section elements and nav links
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".fixed-rectangle nav ul li a");
+  
+    // Create an Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Remove the active class from all nav links
+          navLinks.forEach(link => link.classList.remove("active"));
+          
+          // Add the active class to the nav link that matches the current section
+          const activeLink = document.querySelector(`.fixed-rectangle nav ul li a[href="#${entry.target.id}"]`);
+          if (activeLink) {
+            activeLink.classList.add("active");
+          }
+        }
+      });
+    }, { threshold: 0.5 }); // Trigger when 50% of the section is in view
+  
+    // Observe each section
+    sections.forEach(section => observer.observe(section));
+    // document.addEventListener("scroll", function() {
+    //     const skillItems = document.querySelectorAll(".skill-item");
+
+    //     const observerOptions = {
+    //         root: null,
+    //         rootMargin: "0px",
+    //         threshold: 0.2 
+    //     };
+
+    //     const observer = new IntersectionObserver((entries, observer) => {
+    //         entries.forEach(entry => {
+    //             if (entry.isIntersecting) {
+    //                 entry.target.classList.add("in-view-skill"); 
+    //                 observer.unobserve(entry.target); 
+    //             }
+    //         });
+    //     }, observerOptions);
+
+    //     skillItems.forEach(item => {
+    //         observer.observe(item);
+    //     });
+    // });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const sections = document.querySelectorAll('#about, #skills');
+        
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');  // Add visible class when the section is in view
+                    observer.unobserve(entry.target);  // Stop observing once the animation is triggered
+                }
+            });
+        }, {
+            threshold: 0.1  // Trigger when 10% of the section is visible
+        });
+        
+        sections.forEach(section => {
+            observer.observe(section);  // Start observing each section
+        });
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+        const menuToggle = document.createElement('button');
+        menuToggle.classList.add('menu-toggle');
+        menuToggle.textContent = 'Menu';
+
+        document.body.appendChild(menuToggle);
+
+        const fixedRectangle = document.querySelector('.fixed-rectangle');
+
+        menuToggle.addEventListener('click', function () {
+            fixedRectangle.classList.toggle('show');
+        });
+    });
+
+</script>
+  
 </html>
