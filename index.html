@@ -1,291 +1,722 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Nayan's Portfolio</title>
-    <link rel="stylesheet" href="index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
-</head>
-<body>
-    <div class="fixed-rectangle">
-        <img src="./public/pic.jpg" alt="image">
-        <div class="name">
-            <h3 id="name">Nayan</h3>
-            <h3 id="profession">Student</h3>
-          </div>
-        <nav>
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact Me</a></li>
-            </ul>
-        </nav>
-        <div class="social">
-            <a href="https://www.facebook.com/profile.php?id=61553834465646"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://www.linkedin.com/in/nayan-kohli-143367320/"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/nayankohli_14/"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://mail.google.com/mail/u/0/#inbox"><i class="fa-solid fa-envelope"></i></a>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div
+      id="sidebar"
+      class="fixed top-0 left h-screen w-80 bg-rose-900/80 overflow-y-auto shadow-lg z-50 transform -translate-x-full transition-transform duration-300 no-scrollbar lg:translate-x-0 lg:ml-[90px]"
+    >
+      <button
+        id="closeSidebar"
+        class="absolute top-4 right-4 text-white text-2xl sm:block lg:hidden"
+      >
+        ✖
+      </button>
+
+      <div class="flex flex-col items-center py-8">
+        <img
+          src="./public/pic.jpg"
+          alt="image"
+          class="w-3/4 h-auto object-cover rounded-full mb-6 mt-8"
+        />
+        <div class="text-center mb-8">
+          <h3 id="name" class="text-white text-2xl font-semibold mb-1">
+            Nayan
+          </h3>
+          <h3 id="profession" class="text-white text-sm font-light italic">
+            Student
+          </h3>
         </div>
+
+        <nav class="w-full">
+          <ul class="flex flex-col">
+            <li class="w-full">
+              <a
+                href="#hero"
+                class="block py-4 text-white text-lg text-center border-t-2 border-white px-6"
+                >Home</a
+              >
+            </li>
+            <li class="w-full">
+              <a
+                href="#about"
+                class="block py-4 text-white text-lg text-center border-t-2 border-white px-6"
+                >About Me</a
+              >
+            </li>
+            <li class="w-full">
+              <a
+                href="#skills"
+                class="block py-4 text-white text-lg text-center border-t-2 border-white px-6"
+                >Skills</a
+              >
+            </li>
+            <li class="w-full">
+              <a
+                href="#projects"
+                class="block py-4 text-white text-lg text-center border-t-2 border-white px-6"
+                >Projects</a
+              >
+            </li>
+            <li class="w-full">
+              <a
+                href="#contact"
+                class="block py-4 text-white text-lg text-center border-b-2 border-t-2 border-white px-6"
+                >Contact Me</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div class="flex justify-center mt-8 space-x-4">
+          <a
+            href="https://www.facebook.com/profile.php?id=61553834465646"
+            class="text-white text-xl hover:text-pink-300"
+          >
+            <i class="fab fa-facebook bg-pink-950 p-3 rounded-full"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/nayan-kohli-143367320/"
+            class="text-white text-xl hover:text-pink-300"
+          >
+            <i class="fab fa-linkedin bg-pink-950 p-3 rounded-full"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/nayankohli_14/"
+            class="text-white text-xl hover:text-pink-300"
+          >
+            <i class="fab fa-instagram bg-pink-950 p-3 rounded-full"></i>
+          </a>
+          <a
+            href="https://mail.google.com/mail/u/0/#inbox"
+            class="text-white text-xl hover:text-pink-300"
+          >
+            <i class="fas fa-envelope bg-pink-950 p-3 rounded-full"></i>
+          </a>
+        </div>
+      </div>
     </div>
 
-    <section id="hero">
-        <div class="hero-content">
-            <h1>Hello, I'm <span>Nayan</span></h1>
-            <p>A Computer Science Student passionate about technology and innovation.</p>
-        </div>
-        <a href="./public/resume.pdf" class="download-btn" download>
-            <i class="fas fa-file-download"></i>Download Resume
-        </a>
-    </section>
-    
+    <!-- Navbar -->
+    <header
+      id="navbar"
+      class="h-15 fixed top-0 left-0 w-full bg-rose-900/80 text-white py-2 px-3 flex justify-between items-center z-50 transition-all duration-300 lg:hidden"
+    >
+      <!-- Hamburger Button -->
+      <button id="toggleSidebar" class="p-2 rounded-md">
+        <i class="fa-solid fa-bars text-2xl"></i>
+      </button>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <hr class="underline">
-        <div class="section-intro">
-            <p>Get to know more about me, my background, and what drives me!</p>
-        </div>
-        <div class="aboutMe-content">
-            <img src="./public/aboutMe.jpg" alt="" class="image1">
-            <div class="context">
-                <h3>Introduction</h3>
-                <span id="about-para">I'm a Computer Science undergrad with a strong foundation in software development and programming. Passionate about learning, I thrive in both collaborative and individual settings. I aim to work on projects that make a positive impact, leveraging technology to drive meaningful solutions. Communication and teamwork are key strengths that help me adapt and grow.</span>
-            </div>
-        </div>
-        <div class="partition"></div>
+      <!-- Name (Nayan / Student) -->
+      <h3 id="name" class="text-white text-2xl font-semibold mb-1">
+        Nayan
+        <span class="text-white font-light italic">/</span>
+        <span class="text-white text-sm font-light italic">Student</span>
+      </h3>
+    </header>
+
+    <section
+      id="hero"
+      class="relative flex flex-col justify-center items-center text-white text-center px-4 lg:min-h-screen mb-0 mt-0"
+    >
+      <div
+        class="hero-content max-w-[90%] sm:max-w-[75%] md:max-w-[75%] mt-10 sm:mt-0 md:mt-0 lg:mt-0"
+      >
+        <h1
+          class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 animate-fadeInUp"
+        >
+          Hello, I'm <span class="text-rose-900 animate-name-pulse">Nayan</span>
+        </h1>
+        <p
+          class="text-base sm:text-lg md:text-xl mb-6 animate-fadeInUp delay-200"
+        >
+          A Computer Science Student passionate about technology and innovation.
+        </p>
+      </div>
+
+      <a
+        href="./public/Resume.pdf"
+        download
+        class="bg-rose-900/80 hover:bg-rose-700 text-white font-bold py-3 px-8 rounded-full shadow-lg flex items-center transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl animate-fadeInUp delay-400"
+      >
+        <svg
+          class="animate-float mr-2"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+          <polyline points="7 10 12 15 17 10" />
+          <line x1="12" y1="15" x2="12" y2="3" />
+        </svg>
+        Download Resume
+      </a>
     </section>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <hr class="underline">
-        <div class="section-intro">
-            <p>Explore the key technical skills I have developed throughout my academic and project work!</p>
+    <section
+      id="about"
+      class="py-16 px-6 ml-[120px] lg:pl-[320px] text-white mt-0"
+    >
+      <div class="intro-sec">
+        <h2 class="text-3xl text-center tracking-wide mb-2 animate-fadeInUp">
+          About Me
+        </h2>
+        <hr
+          class="w-16 h-1 bg-rose-900 mx-auto mt-[-10px] mb-6 animate-slideInUnderline border-none"
+        />
+        <div class="max-w-3xl mx-auto mb-8 text-center">
+          <p class="text-base animate-fadeInText">
+            Get to know more about me, my background, and what drives me!
+          </p>
         </div>
-        <div class="skills-container">
-            <div class="skill-item">
-                   <i class="fab fa-java"></i>
-                   <span>Java</span>
-                </div>
-            <div class="skill-item">
-                <i class="fa-solid fa-code"></i>
-                <span>C++</span>
-            </div>
-            <div class="skill-item">
-                <i class="fa-solid fa-c"></i>
-                <span>C</span>
-            </div>
-            <div class="skill-item">
-                <i class="fab fa-html5"></i>
-                <span>HTML</span>
-            </div>
-            <div class="skill-item">
-                <i class="fab fa-css3-alt"></i>
-                <span>CSS</span>
-            </div>
-            <div class="skill-item">
-                <i class="fab fa-js"></i>
-                <span>JS</span>
-            </div>
-            <div class="skill-item">
-                <i class="fab fa-react"></i>
-                <span>React</span>
-            </div>
-            <div class="skill-item">
-                <i class="fab fa-node"></i>
-                <span>Node.js</span>
-            </div>
-            <div class="skill-item">
-                <i class="fa-brands fa-git-alt"></i>
-                <span>Git</span>
-            </div>
-            <div class="skill-item">
-                <i class="fa-solid fa-database"></i>
-                <span>MongoDB</span>
-            </div>
-            <div class="skill-item">
-                <i class="fa-brands fa-linux"></i>
-                <span>Linux</span>
-            </div>
-        </div>
-        <div class="partition"></div>
-    </section>
-    
+      </div>
+      <div
+  class="flex flex-col gap-6 items-center justify-center bg-gray-700/70 p-4 sm:p-6 sm:mx-auto :mx-auto rounded-md animate-fadeInUp max-w-2xl overflow-hidden"
+>
+  <img
+    src="./public/profilr-2.jpg"
+    alt="About Me"
+    class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-sm rounded-md hover:scale-105 hover:shadow-[0_0_20px_4px] hover:shadow-rose-900 transition-transform duration-300 flex-shrink-0"
+  />
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <hr class="underline">
-        <div class="section-intro">
-            <p>Take a look at some of the projects I've worked on. These reflect my passion for technology and innovation.</p>
-        </div>
-        <div class="project-container">
-            <div class="project-item">
-                <div class="project-inner">
-                    <div class="project-front">
-                        <i class="fa-solid fa-clipboard-list"></i>
-                        <h2>AI TESTPAD</h2>
-                    </div>
-                    <div class="project-back">
-                        <span>An innovative online testing platform where assessments are evaluated using advanced AI algorithms.</span>
-                        <a href="https://github.com/nayankohli/AI-Chat-Bot"><i class="fa-brands fa-github"></i> View on Github</a>
-                    </div>
-                </div>
-                <hr id="sub-partition">
-            </div>
-            <div class="project-item">
-                <div class="project-inner">
-                    <div class="project-front">
-                        <i class="fa-solid fa-shirt"></i>
-                        <h2>TRENDIFY</h2>
-                    </div>
-                    <div class="project-back">
-                        <span>An innovative e-commerce platform tailored for fashion enthusiasts, offering a seamless shopping experience with the latest trends and styles</span>
-                        <a href="https://github.com/nayankohli/Trendify"><i class="fa-brands fa-github"></i> View on Github</a>
-                    </div>
-                </div>
-                <hr id="sub-partition">
-            </div>
-            <div class="project-item">
-                <div class="project-inner">
-                    <div class="project-front">
-                        <i class="fa-solid fa-blog"></i>
-                        <h2>DAILY BLOGGER</h2>
-                    </div>
-                    <div class="project-back">
-                        <span>A personalized blog platform designed for sharing daily experiences, thoughts, and insights with a global audience.</span>
-                        <a href="https://github.com/nayankohli/DailyBlogger"><i class="fa-brands fa-github"></i> View on Github</a>
-                    </div>
-                </div>
-                <hr id="sub-partition">
-            </div>
-            <div class="project-item">
-                <div class="project-inner">
-                    <div class="project-front">
-                        <i class="fa-solid fa-comments"></i>
-                        <h2>VIBE NEST</h2>
-                    </div>
-                    <div class="project-back">
-                        <span>A dynamic social media platform designed to foster meaningful connections and seamless sharing of experiences.</span>
-                        <a href="https://github.com/nayankohli/VibeNest"><i class="fa-brands fa-github"></i> View on Github</a>
-                    </div>
-                </div>
-                <hr id="sub-partition">
-            </div>
-        </div>
-        <div class="partition"></div>
-    </section>
-    
-    
+  <div class="space-y-4 w-full max-w-xl min-w-0">
+    <h3
+      class="text-lg sm:text-xl border-l-4 border-rose-900 pl-4 animate-fadeInText"
+    >
+      Introduction
+    </h3>
+    <p class="text-sm sm:text-base lg:text-lg  w-full text-justify animate-fadeInText">
+      I'm a Computer Science undergrad with a strong foundation in software
+      development and programming. Passionate about learning, I thrive in both
+      collaborative and individual settings. I aim to work on projects that
+      make a positive impact, leveraging technology to drive meaningful
+      solutions. Communication and teamwork are key strengths that help me
+      adapt and grow.
+    </p>
+  </div>
+</div>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <hr class="underline">
-        <div class="section-intro">
-            <p>If you'd like to get in touch, feel free to drop a message below. I’d love to hear from you!</p>
-        </div>
-        <form class="contact-form" action="#" method="post">
-            <div class="row">
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
-                <input type="email" id="email" name="email" placeholder="Your Email" required>
-            </div>
-            <div class="row-full">
-                <input type="text" id="subject" name="subject" placeholder="Subject" required>
-            </div>
-            <div class="row-full">
-                <textarea id="message" name="message" placeholder="Write your message here..." rows="6" required></textarea>
-            </div>
-            <button type="submit">Send Message</button>
-        </form>
+      <div class="h-1 bg-white/10 my-6 animate-fadeInText mt-40"></div>
     </section>
-    
+
+    <section
+      id="skills"
+      class="py-16 px-6 ml-[120px] lg:pl-[320px] text-white mt-0"
+    >
+      <div class="intro-sec">
+        <h2 class="text-3xl text-center tracking-wide mb-2 animate-fadeInUp">
+          Skills
+        </h2>
+        <hr
+          class="w-16 h-1 bg-rose-900 mx-auto mt-[-10px] mb-6 animate-slideInUnderline border-none"
+        />
+        <div class="max-w-3xl mx-auto mb-8 text-center">
+          <p class="text-base animate-fadeInText">
+            Explore the key technical skills I have developed throughout my
+            academic and project work!
+          </p>
+        </div>
+      </div>
+      <div class="skills-container flex flex-wrap justify-center gap-6 px-4">
+        <div
+          class="skill-item bg-gray-700/70 flex flex-col justify-center items-center p-6 sm:mx-auto shadow-md rounded-lg w-36 h-36 transition-transform transform duration-500 hover:translate-y-2 hover:bg-rose-900/80"
+        >
+          <i
+            class="fab fa-java text-5xl text-rose-900 transition-transform duration-300"
+          ></i>
+          <span class="mt-2 font-medium text-lg">Java</span>
+        </div>
+        <div
+          class="skill-item bg-gray-700/70 flex flex-col justify-center items-center p-6 shadow-md rounded-lg w-36 h-36 transition-transform transform duration-500 hover:translate-y-2 hover:bg-rose-900/80"
+        >
+          <i
+            class="fa-solid fa-code text-4xl text-rose-900 transition-transform duration-300"
+          ></i>
+          <span class="mt-2 font-medium text-lg">C++</span>
+        </div>
+        <div
+          class="skill-item bg-gray-700/70 flex flex-col justify-center items-center p-6 shadow-md rounded-lg w-36 h-36 transition-transform transform duration-500 hover:translate-y-2 hover:bg-rose-900/80"
+        >
+          <i
+            class="fa-solid fa-c text-4xl text-rose-900 transition-transform duration-300"
+          ></i>
+          <span class="mt-2 font-medium text-lg">C</span>
+        </div>
+        <div
+          class="skill-item bg-gray-700/70 flex flex-col justify-center items-center p-6 shadow-md rounded-lg w-36 h-36 transition-transform transform duration-500 hover:translate-y-2 hover:bg-rose-900/80"
+        >
+          <i
+            class="fab fa-react text-4xl text-rose-900 transition-transform duration-300"
+          ></i>
+          <span class="mt-2 font-medium text-lg">React.JS</span>
+        </div>
+        <div
+          class="skill-item bg-gray-700/70 flex flex-col justify-center items-center p-6 shadow-md rounded-lg w-36 h-36 transition-transform transform duration-500 hover:translate-y-2 hover:bg-rose-900/80"
+        >
+          <i
+            class="fab fa-html5 text-4xl text-rose-900 transition-transform duration-300"
+          ></i>
+          <span class="mt-2 font-medium text-lg">HTML</span>
+        </div>
+        <div
+          class="skill-item bg-gray-700/70 flex flex-col justify-center items-center p-6 shadow-md rounded-lg w-36 h-36 transition-transform transform duration-500 hover:translate-y-2 hover:bg-rose-900/80"
+        >
+          <i
+            class="fab fa-css3-alt text-4xl text-rose-900 transition-transform duration-300"
+          ></i>
+          <span class="mt-2 font-medium text-lg">CSS</span>
+        </div>
+        <div
+          class="skill-item bg-gray-700/70 flex flex-col justify-center items-center p-6 shadow-md rounded-lg w-36 h-36 transition-transform transform duration-500 hover:translate-y-2 hover:bg-rose-900/80"
+        >
+          <i
+            class="fab fa-js text-4xl text-rose-900 transition-transform duration-300"
+          ></i>
+          <span class="mt-2 font-medium text-lg">JavaScript</span>
+        </div>
+        <div
+          class="skill-item bg-gray-700/70 flex flex-col justify-center items-center p-6 shadow-md rounded-lg w-36 h-36 transition-transform transform duration-500 hover:translate-y-2 hover:bg-rose-900/80"
+        >
+          <i
+            class="fab fa-node-js text-4xl text-rose-900 transition-transform duration-300"
+          ></i>
+          <span class="mt-2 font-medium text-lg">Node.JS</span>
+        </div>
+        <div
+          class="skill-item bg-gray-700/70 flex flex-col justify-center items-center p-6 shadow-md rounded-lg w-36 h-36 transition-transform transform duration-500 hover:translate-y-2 hover:bg-rose-900/80"
+        >
+          <i
+            class="fas fa-database text-4xl text-rose-900 transition-transform duration-300"
+          ></i>
+          <span class="mt-2 font-medium text-lg">MongoDB</span>
+        </div>
+        <div
+          class="skill-item bg-gray-700/70 flex flex-col justify-center items-center p-6 shadow-md rounded-lg w-36 h-36 transition-transform transform duration-500 hover:translate-y-2 hover:bg-rose-900/80"
+        >
+          <i
+            class="fa-brands fa-git-alt text-4xl text-rose-900 transition-transform duration-300"
+          ></i>
+          <span class="mt-2 font-medium text-lg">Git</span>
+        </div>
+        <div
+          class="skill-item bg-gray-700/70 flex flex-col justify-center items-center p-6 shadow-md rounded-lg w-36 h-36 transition-transform transform duration-500 hover:translate-y-2 hover:bg-rose-900/80"
+        >
+          <i
+            class="fa-brands fa-linux text-4xl text-rose-900 transition-transform duration-300"
+          ></i>
+          <span class="mt-2 font-medium text-lg">Linux</span>
+        </div>
+      </div>
+      <div class="h-1 bg-white/10 my-6 animate-fadeInText mt-40"></div>
+    </section>
+
+    <section
+      id="projects"
+      class="py-16 px-6 ml-[120px] lg:pl-[320px] text-white mt-0"
+    >
+      <div class="intro-sec">
+        <h2 class="text-3xl text-center tracking-wide mb-2 animate-fadeInUp">
+          Projects
+        </h2>
+        <hr
+          class="w-16 h-1 bg-rose-900 mx-auto mt-[-10px] mb-6 animate-slideInUnderline border-none"
+        />
+        <div class="max-w-3xl mx-auto mb-8 text-center">
+          <p class="text-base animate-fadeInText">
+            Take a look at some of the projects I've worked on. These reflect my
+            passion for technology and innovation.
+          </p>
+        </div>
+      </div>
+
+      <div class="w-full max-w-6xl mx-auto px-4 sm:mx-auto flex justify-center">
+        <!-- Center content -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 sm:mx-auto lg:grid-cols-2 gap-8 mx-auto md:justify-center px-4"
+        >
+          <!-- Adjusted to 3 columns on larger screens -->
+          <!-- Project Cards -->
+          <div
+            class="project-item relative group bg-gray-700/70 p-6 sm:mx-auto py-[50px] md:p-20 rounded-lg shadow-lg transition transform hover:scale-105 h-full flex flex-col justify-between hover:border-2 hover:border-rose-900 transition-transform transform duration-500 hover:translate-y-2"
+          >
+            <div
+              class="flex flex-col items-center justify-center text-white group-hover:opacity-20 transition-opacity"
+            >
+              <i class="fa-solid fa-clipboard-list text-5xl text-rose-900"></i>
+              <h3 class="text-xl text-center font-semibold mt-4">TESTBENCH</h3>
+            </div>
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <p class="text-gray-200 text-center px-4">
+                An innovative online testing platform where assessments are
+                evaluated using advanced AI algorithms.
+              </p>
+              <a
+                href="https://github.com/nayankohli/AI-Chat-Bot"
+                class="mt-4 px-4 py-2 bg-rose-900 text-white rounded-md shadow-md hover:bg-rose-700 transition"
+                target="_blank"
+              >
+                <i class="fa-brands fa-github"></i> View on GitHub
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="project-item relative group bg-gray-700/70 p-6 sm:mx-auto py-[50px] md:p-20 rounded-lg shadow-lg transition transform hover:scale-105 h-full flex flex-col justify-between hover:border-2 hover:border-rose-900 transition-transform transform duration-500 hover:translate-y-2"
+          >
+            <div
+              class="flex flex-col items-center justify-center text-white group-hover:opacity-20 transition-opacity"
+            >
+              <i class="fa-solid fa-shirt text-5xl text-rose-900"></i>
+              <h3 class="text-xl text-center font-semibold mt-4">TRENDIFY</h3>
+            </div>
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <p class="text-gray-200 text-center px-4">
+                A fashion e-commerce platform offering a seamless shopping
+                experience with the latest trends.
+              </p>
+              <a
+                href="https://github.com/nayankohli/Trendify"
+                class="mt-4 px-4 py-2 bg-rose-900 text-white rounded-md shadow-md hover:bg-rose-700 transition"
+                target="_blank"
+              >
+                <i class="fa-brands fa-github"></i> View on GitHub
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="project-item relative group bg-gray-700/70 p-6 sm:mx-auto py-[50px] md:p-20 rounded-lg shadow-lg transition transform hover:scale-105 h-full flex flex-col justify-between hover:border-2 hover:border-rose-900 transition-transform transform duration-500 hover:translate-y-2"
+          >
+            <div
+              class="flex flex-col items-center justify-center text-white group-hover:opacity-20 transition-opacity"
+            >
+              <i class="fa-solid fa-blog text-5xl text-rose-900"></i>
+              <h3 class="text-xl text-center font-semibold mt-4">
+                DAILY BLOGGER
+              </h3>
+            </div>
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <p class="text-gray-200 text-center px-4">
+                A personalized blog platform designed for sharing experiences,
+                thoughts, and insights globally.
+              </p>
+              <a
+                href="https://github.com/nayankohli/DailyBlogger"
+                class="mt-4 px-4 py-2 bg-rose-900 text-white rounded-md shadow-md hover:bg-rose-700 transition"
+                target="_blank"
+              >
+                <i class="fa-brands fa-github"></i> View on GitHub
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="project-item relative group bg-gray-700/70 p-6 sm:mx-auto py-[50px] md:p-20 rounded-lg shadow-lg transition transform hover:scale-105 h-full flex flex-col justify-between hover:border-2 hover:border-rose-900"
+          >
+            <div
+              class="flex flex-col items-center justify-center text-white group-hover:opacity-20 transition-opacity"
+            >
+              <i class="fa-solid fa-comments text-5xl text-rose-900"></i>
+              <h3 class="text-xl text-center font-semibold mt-4">VIBE NEST</h3>
+            </div>
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <p class="text-gray-200 text-center px-4">
+                A social media platform designed to foster meaningful
+                connections and seamless sharing.
+              </p>
+              <a
+                href="https://github.com/nayankohli/VibeNest"
+                class="mt-4 px-4 py-2 bg-rose-900 text-white rounded-md shadow-md hover:bg-rose-700 transition"
+                target="_blank"
+              >
+                <i class="fa-brands fa-github"></i> View on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="h-1 bg-white/10 my-6 animate-fadeInText mt-40"></div>
+    </section>
+
+    <section
+      id="contact"
+      class="py-16 px-6 ml-[120px] lg:pl-[320px] text-white mt-0 min-h-screen justify-center items-center"
+    >
+      <div class="intro-sec">
+        <h2 class="text-3xl text-center tracking-wide mb-2 animate-fadeInUp">
+          Contact Me
+        </h2>
+        <hr
+          class="w-16 h-1 bg-rose-900 mx-auto mt-[-10px] mb-6 animate-slideInUnderline border-none"
+        />
+        <div class="max-w-3xl mx-auto mb-8 text-center sm:px-auto">
+          <p class="text-base animate-fadeInText text-white">
+            If you'd like to get in touch, feel free to drop a message below.
+            I'd love to hear from you!
+          </p>
+        </div>
+      </div>
+      <form
+        id="contactForm"
+        class="max-w-4xl w-full bg-gray-700/60 p-6 rounded-lg shadow-lg flex flex-col gap-4 ml-5"
+      >
+        <div class="flex flex-col sm:flex-row gap-4">
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your Name"
+            class="flex-1 p-3 bg-gray-400/30 text-white rounded-md outline-none focus:ring-2 focus:ring-rose-900"
+            required
+          />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your Email"
+            class="flex-1 p-3 bg-gray-400/30 text-white rounded-md outline-none focus:ring-2 focus:ring-rose-900"
+            required
+          />
+        </div>
+        <input
+          type="text"
+          id="subject"
+          name="subject"
+          placeholder="Subject"
+          class="w-full p-3 bg-gray-400/30 text-white rounded-md outline-none focus:ring-2 focus:ring-rose-900"
+          required
+        />
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Write your message here..."
+          rows="6"
+          class="w-full p-3 bg-gray-400/30 text-white rounded-md outline-none focus:ring-2 focus:ring-rose-900"
+          required
+        ></textarea>
+        <button
+          type="submit"
+          class="w-full bg-rose-900 text-white py-3 font-bold rounded-md shadow-md hover:bg-rose-700 transition"
+        >
+          Send Message
+        </button>
+      </form>
+    </section>
+
     <footer id="footer">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:nayan1480.be22@chitkarauniversity.edu.in">nayan1480.be22@chitkarauniversity.edu.in</a></p>
-        <p>Connect with me on <a href="#">LinkedIn</a></p>
+      <h2 class="text-3xl">Contact Me</h2>
+      <p>
+        Email:
+        <a
+          href="mailto:nayankohli7@gmail.com"
+          class="text-rose-600 hover:text-rose-800"
+          >nayankohli7@gmail.com</a
+        >
+      </p>
+      <p>
+        Connect with me on
+        <a href="#" class="text-rose-600 hover:text-rose-800">LinkedIn</a>
+      </p>
+      <p><span class="far fa-copyright"></span> 2025 All Rights Reserved.</p>
     </footer>
-</body>
-<script>
-    // Select all section elements and nav links
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".fixed-rectangle nav ul li a");
-  
-    // Create an Intersection Observer
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // Remove the active class from all nav links
-          navLinks.forEach(link => link.classList.remove("active"));
-          
-          // Add the active class to the nav link that matches the current section
-          const activeLink = document.querySelector(`.fixed-rectangle nav ul li a[href="#${entry.target.id}"]`);
-          if (activeLink) {
-            activeLink.classList.add("active");
+  </body>
+  <script>
+    const sidebar = document.getElementById("sidebar");
+    const toggleButton = document.getElementById("toggleSidebar");
+    const closeButton = document.getElementById("closeSidebar");
+    const navbar = document.getElementById("navbar");
+
+    toggleButton.addEventListener("click", () => {
+      sidebar.classList.toggle("-translate-x-full");
+      navbar.classList.toggle("hidden");
+    });
+
+    closeButton.addEventListener("click", () => {
+      sidebar.classList.add("-translate-x-full");
+      navbar.classList.remove("hidden");
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const sections = document.querySelectorAll("section"); // Get all sections
+      const navLinks = document.querySelectorAll("ul li a"); // Get all nav links
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Remove background from all nav items
+              navLinks.forEach((link) => {
+                link.parentElement.classList.remove("bg-gray-700/70");
+              });
+
+              // Find the corresponding nav link and add background
+              const activeLink = document.querySelector(
+                `a[href="#${entry.target.id}"]`
+              );
+              if (activeLink) {
+                activeLink.parentElement.classList.add("bg-gray-700/70");
+              }
+            }
+          });
+        },
+        {
+          root: null, // Observe relative to viewport
+          threshold: 0.5, // 50% of the section must be visible
+        }
+      );
+
+      sections.forEach((section) => observer.observe(section));
+    });
+
+    function isInViewport(element) {
+      const rect = element.getBoundingClientRect();
+      return (
+        rect.top <=
+          (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.bottom >= 0 &&
+        rect.left <=
+          (window.innerWidth || document.documentElement.clientWidth) &&
+        rect.right >= 0
+      );
+    }
+
+    function handleFadeEffect() {
+      const elements = document.querySelectorAll(
+        ".animate-fadeOut, .animate-fadeIn, .scale-in, .slide-in-left, .slide-in-right, #projects, .project-item, #contactForm input, #contactForm textarea, #contactForm button"
+      );
+
+      elements.forEach((element) => {
+        if (isInViewport(element)) {
+          element.classList.add("visible");
+        } else {
+          if (!element.id || element.id !== "projects") {
+            element.classList.remove("visible");
           }
         }
       });
-    }, { threshold: 0.5 }); // Trigger when 50% of the section is in view
-  
-    // Observe each section
-    sections.forEach(section => observer.observe(section));
-    // document.addEventListener("scroll", function() {
-    //     const skillItems = document.querySelectorAll(".skill-item");
 
-    //     const observerOptions = {
-    //         root: null,
-    //         rootMargin: "0px",
-    //         threshold: 0.2 
-    //     };
+      // Handle fadeIn and fadeOut effect for intro-sec and hero sections
+      document.querySelectorAll(".intro-sec, #hero").forEach((element) => {
+        if (isInViewport(element)) {
+          element.classList.add("animate-fadeIn");
+          element.classList.remove("animate-fadeOut");
+        } else {
+          element.classList.add("animate-fadeOut");
+          element.classList.remove("animate-fadeIn");
+        }
+      });
+    }
 
-    //     const observer = new IntersectionObserver((entries, observer) => {
-    //         entries.forEach(entry => {
-    //             if (entry.isIntersecting) {
-    //                 entry.target.classList.add("in-view-skill"); 
-    //                 observer.unobserve(entry.target); 
-    //             }
-    //         });
-    //     }, observerOptions);
+    function addAnimationClasses() {
+      document
+        .querySelectorAll(".skill-item:nth-child(odd)")
+        .forEach((el) => el.classList.add("slide-in-left"));
+      document
+        .querySelectorAll(".skill-item:nth-child(even)")
+        .forEach((el) => el.classList.add("slide-in-right"));
 
-    //     skillItems.forEach(item => {
-    //         observer.observe(item);
-    //     });
-    // });
+      document
+        .querySelectorAll(".project-item:nth-child(odd)")
+        .forEach((el) => el.classList.add("slide-in-left"));
+      document
+        .querySelectorAll(".project-item:nth-child(even)")
+        .forEach((el) => el.classList.add("slide-in-right"));
 
-    document.addEventListener('DOMContentLoaded', function () {
-        const sections = document.querySelectorAll('#about, #skills');
-        
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');  // Add visible class when the section is in view
-                    observer.unobserve(entry.target);  // Stop observing once the animation is triggered
-                }
-            });
-        }, {
-            threshold: 0.1  // Trigger when 10% of the section is visible
-        });
-        
-        sections.forEach(section => {
-            observer.observe(section);  // Start observing each section
-        });
-    });
-    document.addEventListener('DOMContentLoaded', function () {
-        const menuToggle = document.createElement('button');
-        menuToggle.classList.add('menu-toggle');
-        menuToggle.textContent = 'Menu';
+      document
+        .querySelectorAll(".intro-sec")
+        .forEach((el) => el.classList.add("animate-fadeIn"));
+      document
+        .querySelectorAll(".intro-sec")
+        .forEach((el) => el.classList.add("animate-fadeOut"));
 
-        document.body.appendChild(menuToggle);
+      // Ensure that #hero section gets the fade-in and fade-out classes on load
+      document
+        .querySelectorAll("#hero")
+        .forEach((el) => el.classList.add("animate-fadeIn", "animate-fadeOut"));
+    }
 
-        const fixedRectangle = document.querySelector('.fixed-rectangle');
-
-        menuToggle.addEventListener('click', function () {
-            fixedRectangle.classList.toggle('show');
-        });
+    // Initialize animations
+    document.addEventListener("DOMContentLoaded", () => {
+      addAnimationClasses();
+      handleFadeEffect(); // Trigger the fade effect on page load as well
     });
 
-</script>
-  
+    // Listen for scroll events
+    window.addEventListener("scroll", handleFadeEffect);
+
+    const style = document.createElement("style");
+    style.textContent = `
+    .animate-fadeIn {
+        animation: fadeIn 1s ease-in-out forwards;
+    }
+    .animate-fadeOut {
+        animation: fadeOut 1s ease-in-out forwards;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeOut {
+        from { opacity: 1; transform: translateY(0); }
+        to { opacity: 0; transform: translateY(20px); }
+    }
+`;
+    document.head.appendChild(style);
+
+    function addStaggerEffect(selector) {
+      const elements = document.querySelectorAll(selector);
+      elements.forEach((element, index) => {
+        element.style.transitionDelay = `${index * 0.2}s`; // Increased delay for more noticeable stagger
+      });
+    }
+
+    document
+      .getElementById("contact")
+      .addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Gather form data
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const subject = document.getElementById("subject").value;
+        const message = document.getElementById("message").value;
+
+        // Construct mailto link
+        const mailtoLink = `mailto:nayankohli7@gmail.com?subject=${encodeURIComponent(
+          subject
+        )}%0A&body=Greetings Nayan,%0A${encodeURIComponent(
+          message
+        )}%0AFrom,%0A${encodeURIComponent(name)}`;
+
+        // Open the mail client
+        window.location.href = mailtoLink;
+      });
+  </script>
 </html>
