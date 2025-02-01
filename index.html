@@ -133,7 +133,7 @@
 
     <section
       id="hero"
-      class="relative flex flex-col justify-center items-center text-white text-center px-4 lg:min-h-screen mb-0 mt-0"
+      class="relative flex flex-col  justify-center items-center text-white text-center px-4 lg:min-h-screen mb-0 mt-100"
     >
       <div
         class="hero-content max-w-[90%] sm:max-w-[75%] md:max-w-[75%] mt-10 sm:mt-0 md:mt-0 lg:mt-0"
@@ -190,7 +190,7 @@
         </div>
       </div>
       <div
-  class="flex flex-col gap-6 items-center justify-center bg-gray-700/70 p-4 sm:p-6 sm:mx-auto :mx-auto rounded-md animate-fadeInUp max-w-2xl overflow-hidden"
+  class="flex flex-col gap-6 items-center justify-center bg-gray-700/70 p-4 py:20 sm:p-6 sm:mx-auto mx-auto rounded-md animate-fadeInUp max-w-2xl overflow-hidden"
 >
   <img
     src="./public/profilr-2.jpg"
@@ -238,7 +238,7 @@
       </div>
       <div class="skills-container flex flex-wrap justify-center gap-6 px-4">
         <div
-          class="skill-item bg-gray-700/70 flex flex-col justify-center items-center p-6 sm:mx-auto shadow-md rounded-lg w-36 h-36 transition-transform transform duration-500 hover:translate-y-2 hover:bg-rose-900/80"
+          class="skill-item bg-gray-700/70 flex flex-col justify-center items-center p-6 shadow-md rounded-lg w-36 h-36 transition-transform transform duration-500 hover:translate-y-2 hover:bg-rose-900/80"
         >
           <i
             class="fab fa-java text-5xl text-rose-900 transition-transform duration-300"
@@ -356,8 +356,8 @@
           <!-- Adjusted to 3 columns on larger screens -->
           <!-- Project Cards -->
           <div
-            class="project-item relative group bg-gray-700/70 p-6 sm:mx-auto py-[50px] md:p-20 rounded-lg shadow-lg transition transform hover:scale-105 h-full flex flex-col justify-between hover:border-2 hover:border-rose-900 transition-transform transform duration-500 hover:translate-y-2"
-          >
+  class="project-item relative group bg-gray-700/70 flex flex-col justify-center items-center p-6 p-[80px]  shadow-md rounded-lg  transition-transform transform duration-500 hover:translate-y-2 hover:scale-105  hover:border-2 hover:border-rose-900"
+>
             <div
               class="flex flex-col items-center justify-center text-white group-hover:opacity-20 transition-opacity"
             >
@@ -382,8 +382,8 @@
           </div>
 
           <div
-            class="project-item relative group bg-gray-700/70 p-6 sm:mx-auto py-[50px] md:p-20 rounded-lg shadow-lg transition transform hover:scale-105 h-full flex flex-col justify-between hover:border-2 hover:border-rose-900 transition-transform transform duration-500 hover:translate-y-2"
-          >
+  class="project-item relative group bg-gray-700/70 flex flex-col justify-center items-center p-6 p-[80px]  shadow-md rounded-lg  transition-transform transform duration-500 hover:translate-y-2 hover:scale-105  hover:border-2 hover:border-rose-900"
+>
             <div
               class="flex flex-col items-center justify-center text-white group-hover:opacity-20 transition-opacity"
             >
@@ -408,8 +408,8 @@
           </div>
 
           <div
-            class="project-item relative group bg-gray-700/70 p-6 sm:mx-auto py-[50px] md:p-20 rounded-lg shadow-lg transition transform hover:scale-105 h-full flex flex-col justify-between hover:border-2 hover:border-rose-900 transition-transform transform duration-500 hover:translate-y-2"
-          >
+  class="project-item relative group bg-gray-700/70 flex flex-col justify-center items-center p-6 p-[80px]  shadow-md rounded-lg  transition-transform transform duration-500 hover:translate-y-2 hover:scale-105  hover:border-2 hover:border-rose-900"
+>
             <div
               class="flex flex-col items-center justify-center text-white group-hover:opacity-20 transition-opacity"
             >
@@ -436,8 +436,8 @@
           </div>
 
           <div
-            class="project-item relative group bg-gray-700/70 p-6 sm:mx-auto py-[50px] md:p-20 rounded-lg shadow-lg transition transform hover:scale-105 h-full flex flex-col justify-between hover:border-2 hover:border-rose-900"
-          >
+  class="project-item relative group bg-gray-700/70 flex flex-col justify-center items-center p-6 p-[80px]  shadow-md rounded-lg  transition-transform transform duration-500 hover:translate-y-2 hover:scale-105  hover:border-2 hover:border-rose-900"
+>
             <div
               class="flex flex-col items-center justify-center text-white group-hover:opacity-20 transition-opacity"
             >
@@ -467,7 +467,7 @@
 
     <section
       id="contact"
-      class="py-16 px-6 ml-[120px] lg:pl-[320px] text-white mt-0 min-h-screen justify-center items-center"
+      class="py-16 px-6 ml-[120px] lg:pl-[320px] text-white mt-0 justify-center align items"
     >
       <div class="intro-sec">
         <h2 class="text-3xl text-center tracking-wide mb-2 animate-fadeInUp">
@@ -483,9 +483,10 @@
           </p>
         </div>
       </div>
+      <!-- grid grid-cols-1 md:grid-cols-2 sm:mx-auto lg:grid-cols-2 gap-8 mx-auto md:justify-center px-4 -->
       <form
         id="contactForm"
-        class="max-w-4xl w-full bg-gray-700/60 p-6 rounded-lg shadow-lg flex flex-col gap-4 ml-5"
+        class="max-w-4xl w-full bg-gray-700/60 p-6 rounded-lg shadow-lg flex flex-col gap-5 mx-auto md:justify-center px-4 "
       >
         <div class="flex flex-col sm:flex-row gap-4">
           <input
