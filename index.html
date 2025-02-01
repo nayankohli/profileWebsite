@@ -20,7 +20,7 @@
     <!-- Sidebar -->
     <div
   id="sidebar"
-  class="fixed top-0 left-0 h-screen w-80 bg-rose-900/80 overflow-y-auto shadow-lg z-50 transform -translate-x-full transition-transform duration-300 no-scrollbar lg:translate-x-0 lg:ml-[90px] flex flex-col items-center justify-center pt-20 sm:pt-0 md:pt-0 "
+  class="fixed top-0 left-0 h-screen w-80 bg-rose-900/80 overflow-y-auto shadow-lg z-50 transform -translate-x-full transition-transform duration-300 no-scrollbar lg:translate-x-0 lg:ml-[90px] flex flex-col items-center justify-center pt-20 pb:20"
 >
       <button
         id="closeSidebar"
@@ -552,51 +552,62 @@
   </body>
   <script>
     const sidebar = document.getElementById("sidebar");
-    const toggleButton = document.getElementById("toggleSidebar");
-    const closeButton = document.getElementById("closeSidebar");
-    const navbar = document.getElementById("navbar");
+const toggleButton = document.getElementById("toggleSidebar");
+const closeButton = document.getElementById("closeSidebar");
+const navbar = document.getElementById("navbar");
+const navLinks = document.querySelectorAll("#sidebar ul li a"); // Select all nav links inside sidebar
 
-    toggleButton.addEventListener("click", () => {
-      sidebar.classList.toggle("-translate-x-full");
-      navbar.classList.toggle("hidden");
-    });
+toggleButton.addEventListener("click", () => {
+  sidebar.classList.toggle("-translate-x-full");
+  navbar.classList.toggle("hidden");
+});
 
-    closeButton.addEventListener("click", () => {
-      sidebar.classList.add("-translate-x-full");
-      navbar.classList.remove("hidden");
-    });
+closeButton.addEventListener("click", () => {
+  sidebar.classList.add("-translate-x-full");
+  navbar.classList.remove("hidden");
+});
 
-    document.addEventListener("DOMContentLoaded", function () {
-      const sections = document.querySelectorAll("section"); // Get all sections
-      const navLinks = document.querySelectorAll("ul li a"); // Get all nav links
+// Functionality: Close sidebar when a nav link is clicked (only for small screens)
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    if (window.innerWidth < 1024) { // Only on small screens
+      sidebar.classList.add("-translate-x-full"); // Slide out sidebar
+      navbar.classList.remove("hidden"); // Show navbar
+    }
+  });
+});
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              // Remove background from all nav items
-              navLinks.forEach((link) => {
-                link.parentElement.classList.remove("bg-gray-700/70");
-              });
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll("section"); // Get all sections
 
-              // Find the corresponding nav link and add background
-              const activeLink = document.querySelector(
-                `a[href="#${entry.target.id}"]`
-              );
-              if (activeLink) {
-                activeLink.parentElement.classList.add("bg-gray-700/70");
-              }
-            }
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Remove background from all nav items
+          navLinks.forEach((link) => {
+            link.parentElement.classList.remove("bg-gray-700/70");
           });
-        },
-        {
-          root: null, // Observe relative to viewport
-          threshold: 0.5, // 50% of the section must be visible
-        }
-      );
 
-      sections.forEach((section) => observer.observe(section));
-    });
+          // Find the corresponding nav link and add background
+          const activeLink = document.querySelector(
+            `a[href="#${entry.target.id}"]`
+          );
+          if (activeLink) {
+            activeLink.parentElement.classList.add("bg-gray-700/70");
+          }
+        }
+      });
+    },
+    {
+      root: null, // Observe relative to viewport
+      threshold: 0.5, // 50% of the section must be visible
+    }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+});
+
 
     function isInViewport(element) {
       const rect = element.getBoundingClientRect();
