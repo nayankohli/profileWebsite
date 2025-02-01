@@ -3,15 +3,33 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f5;
+    background-color: #000000;
     color: #333;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
                 url('./public/backgroundImage.jpeg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    overflow-x: hidden;
+    background-repeat: no-repeat;
 }
+
+/* Responsive Background Adjustments */
+@media (max-width: 768px) {
+    body {
+        background-size: contain; /* Ensures full image is visible */
+        background-position: top center; /* Adjust position for small screens */
+        background-color: #000000;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        background-size: 100% auto; /* Keeps width full, adjusts height automatically */
+        background-position: center center;
+        background-color: #000000;
+    }
+}
+
 
 #sidebar nav li.focused {
     background-color: rgba(55, 65, 81, 0.7); /* bg-gray-700/70 */
