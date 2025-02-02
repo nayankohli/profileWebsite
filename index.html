@@ -124,51 +124,42 @@
       </button>
 
       <!-- Name (Nayan / Student) -->
+      <a
+      href="#hero">
       <h3 id="name" class="text-white text-2xl font-semibold mb-1">
         Nayan
         <span class="text-white font-light italic">/</span>
         <span class="text-white text-sm font-light italic">Student</span>
       </h3>
+    </a>
     </header>
 
     <section
-      id="hero"
-      class="relative flex flex-col justify-center items-center text-white text-center px-4 py-16 px-6 ml-[120px] lg:pl-[320px] lg:min-h-screen mb-0 mt-0"
-    >
-      <div
-        class="hero-content max-w-[90%] sm:max-w-[75%] md:max-w-[75%] mt-10 sm:mt-0 md:mt-0 lg:mt-0"
-      >
-        <h1
-          class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 animate-fadeInUp"
-        >
-          Hello, I'm <span class="text-rose-900 animate-name-pulse">Nayan</span>
-        </h1>
-        <p
-          class="text-base sm:text-lg md:text-xl mb-6 animate-fadeInUp delay-200"
-        >
-          A Computer Science Student passionate about technology and innovation.
-        </p>
-      </div>
+  id="hero"
+  class="relative flex flex-col justify-center items-center text-white text-center px-4 py-16 lg:min-h-screen mb-0 mt-0"
+>
+  <div class="hero-content max-w-[90%] sm:max-w-[75%] md:max-w-[75%]">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 animate-fadeInUp">
+      Hello, I'm <span class="text-rose-900 animate-name-pulse">Nayan</span>
+    </h1>
+    <p class="text-base sm:text-lg md:text-xl mb-6 animate-fadeInUp delay-200">
+      A Computer Science Student passionate about technology and innovation.
+    </p>
+  </div>
 
-      <a href="public/Resume.pdf" download
-        class="bg-rose-900/80 hover:bg-rose-700 text-white font-bold py-3 px-8 rounded-full shadow-lg flex items-center transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl animate-fadeInUp delay-400"
-      >
-        <svg
-          class="animate-float mr-2"
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-          <polyline points="7 10 12 15 17 10" />
-          <line x1="12" y1="15" x2="12" y2="3" />
-        </svg>
-        Download Resume
-      </a>
-    </section>
+  <a href="public/Resume.pdf" download
+    class="bg-rose-900/80 hover:bg-rose-700 text-white font-bold py-3 px-8 rounded-full shadow-lg flex items-center transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl animate-fadeInUp delay-400"
+  >
+    <svg class="animate-float mr-2" width="16" height="16" viewBox="0 0 24 24"
+      fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <polyline points="7 10 12 15 17 10" />
+      <line x1="12" y1="15" x2="12" y2="3" />
+    </svg>
+    Download Resume
+  </a>
+</section>
+
 
     <section
       id="about"
@@ -467,7 +458,7 @@
 
     <section
       id="contact"
-      class="py-16 px-6 ml-[120px] lg:pl-[320px] text-white mt-0 justify-center align items"
+      class="py-16 px-6 ml-[120px] lg:pl-[320px] text-white mt-0"
     >
       <div class="intro-sec">
         <h2 class="text-3xl text-center tracking-wide mb-2 animate-fadeInUp">
@@ -486,7 +477,7 @@
       <!-- grid grid-cols-1 md:grid-cols-2 sm:mx-auto lg:grid-cols-2 gap-8 mx-auto md:justify-center px-4 -->
       <form
         id="contactForm"
-        class="max-w-4xl w-full bg-gray-700/60 p-6 rounded-lg shadow-lg flex flex-col gap-5 mx-auto md:justify-center px-4"
+        class="max-w-4xl w-full bg-gray-700/60 p-6 rounded-lg shadow-lg flex flex-col gap-5 mx-auto md:justify-center px-4 "
       >
         <div class="flex flex-col sm:flex-row gap-4">
           <input
@@ -565,31 +556,44 @@ closeButton.addEventListener("click", () => {
   navbar.classList.remove("hidden");
 });
 
-// Functionality: Close sidebar when a nav link is clicked (only for small screens)
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    if (window.innerWidth < 1024) { // Only on small screens
-      sidebar.classList.add("-translate-x-full"); // Slide out sidebar
-      navbar.classList.remove("hidden"); // Show navbar
-    }
-  });
-});
-
 document.addEventListener("DOMContentLoaded", function () {
-  const sections = document.querySelectorAll("section"); // Get all sections
+  const navLinks = document.querySelectorAll("nav a"); // Select all nav links
+  const sidebar = document.getElementById("sidebar");
+  const navbar = document.getElementById("navbar");
+  const sections = document.querySelectorAll("section");
 
+  // 🌟 Fix: Apply active background when clicking a nav link
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function () {
+      // Remove background from all links
+      navLinks.forEach((item) => {
+        item.parentElement.classList.remove("bg-gray-700/70");
+      });
+
+      // Add background to clicked link
+      this.parentElement.classList.add("bg-gray-700/70");
+
+      // Close sidebar on smaller screens
+      if (window.innerWidth < 1024) {
+        sidebar.classList.add("-translate-x-full"); // Hide sidebar
+        navbar.classList.remove("hidden"); // Show navbar
+      }
+    });
+  });
+
+  // Intersection Observer for highlighting active section
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Remove background from all nav items
+          // Remove background from all nav links
           navLinks.forEach((link) => {
             link.parentElement.classList.remove("bg-gray-700/70");
           });
 
           // Find the corresponding nav link and add background
           const activeLink = document.querySelector(
-            `a[href="#${entry.target.id}"]`
+            `nav a[href="#${entry.target.id}"]`
           );
           if (activeLink) {
             activeLink.parentElement.classList.add("bg-gray-700/70");
@@ -598,13 +602,14 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     },
     {
-      root: null, // Observe relative to viewport
-      threshold: 0.5, // 50% of the section must be visible
+      root: null,
+      threshold: 0.5, // Trigger when 50% of the section is visible
     }
   );
 
   sections.forEach((section) => observer.observe(section));
 });
+
 
 
     function isInViewport(element) {
